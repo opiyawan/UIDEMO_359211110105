@@ -1,22 +1,28 @@
 package admin;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class StudentData {
     //properties of object
     private final StringProperty id;
     private final StringProperty firstName;
-    private final StringProperty lastname;
+    private final StringProperty lastName;
     private final StringProperty email;
     private final StringProperty DOB;
     //constructor
 
-    public StudentData(StringProperty id, StringProperty firstName, StringProperty lastname, StringProperty email, StringProperty DOB) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastname = lastname;
-        this.email = email;
-        this.DOB = DOB;
+
+    public StudentData(String id,
+                       String firstName,
+                       String lastName,
+                       String email,
+                       String DOB) {
+        this.id = new SimpleStringProperty(id);
+        this.firstName = new SimpleStringProperty(firstName);
+        this.lastName = new SimpleStringProperty(lastName);
+        this.email = new SimpleStringProperty(email);
+        this.DOB = new SimpleStringProperty(DOB);
     }//constructor
     //getter and setter methods
 
@@ -28,9 +34,9 @@ public class StudentData {
         return id;
     }
 
-    public void setId(String id) {
-        this.id.set(id);
-    }
+//    public void setId(String id) {
+//        this.id.set(id);
+//    }
 
     public String getFirstName() {
         return firstName.get();
@@ -44,16 +50,16 @@ public class StudentData {
         this.firstName.set(firstName);
     }
 
-    public String getLastname() {
-        return lastname.get();
+    public String getLastName() {
+        return lastName.get();
     }
 
-    public StringProperty lastnameProperty() {
-        return lastname;
+    public StringProperty lastNameProperty() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname.set(lastname);
+    public void setLastName(String lastName) {
+        this.lastName.set(lastName);
     }
 
     public String getEmail() {
